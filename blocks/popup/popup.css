@@ -5,11 +5,12 @@
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: 'Inter', 'Arial', sans-serif;
-  transition: opacity 1s ease-out;
   opacity: 0;
-  height: 0;
-  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0.5s, opacity 0.5s linear;
 }
