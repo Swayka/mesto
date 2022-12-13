@@ -84,13 +84,14 @@ cards.forEach(function(item) {
 
 const openPopup = function (popup) {
     popup.classList.add('popup_opened');
-    document.addEventListener('keydown', closePopupByClickOnEsc)
-    document.addEventListener('click', closePopupByClickOnOverlay)
+    document.addEventListener('keydown', closePopupByClickOnEsc);
+    document.addEventListener('click', closePopupByClickOnOverlay);
 }
 
 const closePopup = function (popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener("keydown", closePopupByClickOnEsc);
+  document.removeEventListener('click', closePopupByClickOnOverlay);
 }
 
 
