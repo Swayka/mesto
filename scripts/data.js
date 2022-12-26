@@ -24,3 +24,14 @@ const cards = [
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
   ];
+
+const settingsValidation = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit',
+  inactiveButtonClass: 'popup__submit_inactive',
+  inputErrorClass: 'popup__input-error',
+  errorClass: 'popup__input-error_active'
+}; 
+
+export {cards, settingsValidation};
