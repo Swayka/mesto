@@ -84,9 +84,10 @@ popupAddOpen.addEventListener('click', function() {
   cardFormValidation.toggleButtonState ();
 })
 
-// функция закрытия поапов при нажатии крестиков
+// функция закрытия поапов при нажатии крестиков и нажатии на оверлей
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
+  popup.addEventListener('mousedown', closePopupByClickOnOverlay);
   button.addEventListener('click', () => closePopup(popup));
 });
 
@@ -109,11 +110,6 @@ const handleFormAddPictureSubmit = (evt) => {
 //слушатели нажатия на кнопки submit
 popupAdd.addEventListener('submit', handleFormAddPictureSubmit)
 profileForm.addEventListener('submit', handleProfileFormSubmit);
-
-//слушатели кликов по оверлей
-popupEdit.addEventListener('click', closePopupByClickOnOverlay);
-popupAdd.addEventListener('click', closePopupByClickOnOverlay);
-popupView.addEventListener('click', closePopupByClickOnOverlay);
 
 //прверяем валидацию формы профиля
 const profileFormValidation = new FormValidator(settingsValidation, profileForm);
