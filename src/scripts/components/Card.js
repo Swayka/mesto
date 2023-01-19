@@ -1,10 +1,9 @@
-import {openPopup, popupView, picLink, picTitle} from './index.js'
-
 export class Card {
-  constructor (name, link, templateSelector) {
-    this._name = name;
-    this._link = link;
+  constructor (data, templateSelector, handleCardClick) {
+    this._name = data.name;
+    this._link = data.link;
     this._templateSelector = templateSelector;
+    this.handleCardClick = handleCardClick;
   }
   _getTemplate() {
     const cardElement = document
@@ -47,10 +46,7 @@ export class Card {
     })
 
     this._cardImage.addEventListener('click', () => {
-      openPopup(popupView);
-      picTitle.textContent = this._name;
-      picLink.src = this._link;
-      picLink.alt = this._link;
+      this.handleCardClick();
     })
   }
 }
