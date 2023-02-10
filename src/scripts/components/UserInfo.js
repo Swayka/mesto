@@ -1,19 +1,31 @@
 export class UserInfo {
-  constructor({ nameSelector, infoSelector }) {
-    this._nameSelector = document.querySelector(nameSelector);
-    this._infoSelector = document.querySelector(infoSelector);
+  constructor({ nameSelector, infoSelector, profileAvatarSelector }) {
+    this._name = document.querySelector(nameSelector);
+    this._info = document.querySelector(infoSelector);
+    this._avatar = document.querySelector(profileAvatarSelector);
   }
   //возвращает объект с данными пользователя.
   getUserInfo() {
-    this._data = {
-      name: this._nameSelector.textContent,
-      info: this._infoSelector.textContent
+    const userInfo = {
+      name: this._name.textContent,
+      about: this._info.textContent,
+      avatar: this._avatar.src
     }
-    return this._data;
+    return userInfo;
   }
-  //принимает новые данные пользователя и добавляет их на страницу
-  setUserInfo({name, info}) {
-    this._nameSelector.textContent = name;
-    this._infoSelector.textContent = info;
+
+  getUserId() {
+    return this._userId;
+  }
+
+  setUserInfo(item) {
+    this._name.textContent = item.name;
+    this._info.textContent = item.about;
+    this._userId = item._id;
+    this._avatar.src = item.avatar;
+  }
+
+  setAvatar(item) {
+    if(item.avatar) this._avatar.src = item;
   }
 }
