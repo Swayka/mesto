@@ -16,7 +16,6 @@ import {
   nameInput,
   jobInput,
   profileAvatarButton,
-  profileAvatar,
   confirmForm
 } from "../scripts/utils/components.js";
 import {Api} from "../scripts/components/Api.js"
@@ -35,7 +34,6 @@ Promise.all([api.getUserInfo(), api.getCards()])
   .then(([userData, userCard]) => {
     profileInfo.setUserInfo(userData);
     userId = userData._id;
-    profileAvatar.src = userData.avatar;
     cardSection.renderItems(userCard);
   })
   .catch((err) => {

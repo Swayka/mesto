@@ -16,6 +16,5 @@ export const profileForm = document.querySelector('.popup__form_profile');
 export const nameInput = document.querySelector('.popup__input_type_name');
 export const jobInput = document.querySelector('.popup__input_type_description');
 export const profileAvatarButton = document.querySelector('.profile__edit-foto-btn');
-export const profileAvatar = document.querySelector(".profile__foto");
 export const confirmForm = document.querySelector('.popup__form_edit-foto');
 
